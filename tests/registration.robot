@@ -33,11 +33,25 @@ UAT-Lab04-002-02 Empty Last Name
     Page Should Contain    Please enter your last name!!
 
 
+UAT-Lab04-002-06 Empty First Name And Last Name
+    Open Registration Page
+    Input Registration Data    ${EMPTY}    ${EMPTY}    CS KKU    somyod@kkumail.com    091-001-1234
+    Submit Registration
+    Page Should Contain    Please enter your name!!
+
+
 UAT-Lab04-002-03 Empty Email
     Open Registration Page
     Input Registration Data    Somyod    Sodsai    CS KKU    ${EMPTY}    091-001-1234
     Submit Registration
     Page Should Contain    Please enter your email!!
+
+
+UAT-Lab04-002-05 Empty Phone Number
+    Open Registration Page
+    Input Registration Data    Somyod    Sodsai    CS KKU    somyod@kkumail.com    ${EMPTY}
+    Submit Registration
+    Page Should Contain    Please enter your phone number!!
 
 
 UAT-Lab04-002-04 Invalid Phone Number

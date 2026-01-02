@@ -27,6 +27,3 @@ Alert Should Contain
     [Arguments]    ${expected_message}
     ${alert_text}=    Handle Alert    action=DISMISS
     Should Contain    ${alert_text}    ${expected_message}
-
-Close Browser
-    Close Browser
