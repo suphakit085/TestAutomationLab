@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${URL}     http://localhost:7272/Lab4/Registration.html
-${BROWSER} chrome
+${BROWSER}    chrome
 
 *** Keywords ***
 Open Registration Page
@@ -12,14 +12,21 @@ Open Registration Page
 
 Input Registration Data
     [Arguments]    ${fname}    ${lname}    ${org}    ${email}    ${phone}
-    Input Text    id=firstName     ${fname}
-    Input Text    id=lastName      ${lname}
+    Input Text    id=firstname     ${fname}
+    Input Text    id=lastname      ${lname}
     Input Text    id=organization  ${org}
     Input Text    id=email         ${email}
     Input Text    id=phone         ${phone}
 
+
 Submit Registration
-    Click Button    id=register
+    Click Button    id=registerButton
+
+
+Alert Should Contain
+    [Arguments]    ${expected_message}
+    ${alert_text}=    Handle Alert    action=DISMISS
+    Should Contain    ${alert_text}    ${expected_message}
 
 Close Browser
     Close Browser
